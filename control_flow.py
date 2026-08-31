@@ -1,4 +1,4 @@
-# Lab VI: Control Flow and Functions in Python
+   # Lab VI: Control Flow and Functions in Python
 # Programming Essentials for Astronomy I - Python
 #
 # Fill in the TODOs below. Run with:
@@ -13,6 +13,14 @@ if temperature >= 30000:
 elif temperature >= 10000:
     print("Class B")
 # TODO: add elif branches for A (>=7500), F (>=6000), G (>=5200), K (>=3700)
+elif temperature>=7500:
+    print("Class A")
+elif temperature>=6000:
+    print("Class F")
+elif temperature>=5200:
+    print("Class G")
+elif temperature>=3700:
+    print("Class K")
 else:
     print("Class M")
 
@@ -22,17 +30,18 @@ magnitude = 1.25
 naked_eye = magnitude < 6.0
 city_visible = magnitude < 3.0
 # TODO: print whether the star is visible from a city (naked_eye AND city_visible)
-
+print("naked_eye and city_visible")
 
 # --- Part B: repeating things ----------------------------------------------
 
 # Exercise 3: a for loop with range()
 print("--- Light-travel table ---")
-for distance in range(1, 11):
+for distance in range(0,21,5):
     year_left = 2026 - distance
     print(f"{distance} ly  ->  light left in {year_left}")
 # TODO: try range(0, 21, 5) and see what the third number does.
-
+#When including the 5 the numbers are in multiples of five but without it 
+#goes through every single number.
 
 # Exercise 4: a while loop
 brightness = 100.0
@@ -41,7 +50,7 @@ while brightness >= 1.0:
     brightness = brightness / 2
     steps = steps + 1
 # TODO: print how many steps it took to drop below 1.
-
+print("It took 7 steps for the brightness to be less than one")
 
 # --- Part C: functions -----------------------------------------------------
 
@@ -51,7 +60,14 @@ def spectral_class(temperature):
         return "O"
     elif temperature >= 10000:
         return "B"
-    # TODO: add A, F, G, K branches
+    elif temperature>=7500:
+        print("Class A")
+    elif temperature>=6000:
+        print("Class F")
+    elif temperature>=5200:
+        print("Class G")
+    elif temperature>=3700:
+        print("Class K")
     else:
         return "M"
 
